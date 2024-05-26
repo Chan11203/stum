@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,12 +26,30 @@
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
-            // Simulate login (replace with actual login validation)
-            if (username === 'admin' && password === '12345') {
-                // Login successful
-                window.location.href = '/Admin/_HomePage'; // Redirect to AdminHomePage
+            // Sample data simulating the database
+            const users = [
+                { userName: 'admin', password: 'admin', role: 1 },
+                { userName: '1707010091', password: '100010', role: 2 },
+                { userName: '1707010152', password: '100011', role: 2 },
+                { userName: '1707010287', password: '100012', role: 2 },
+                { userName: '1707010341', password: '100013', role: 2 },
+                { userName: '1707010343', password: '100014', role: 2 },
+                { userName: '1807010002', password: '100015', role: 2 },
+                { userName: '1807010010', password: '100016', role: 2 }
+            ];
+
+            // Authenticate user
+            const authenticatedUser = users.find(user => user.userName === username && user.password === password);
+
+            if (authenticatedUser) {
+                // Redirect based on role
+                if (authenticatedUser.role === 1) {
+                    window.location.href = "/Admin/_HomePage";
+                } else if (authenticatedUser.role === 2) {
+                    window.location.href = "/Student/Homepage";
+                }
             } else {
-                alert('Invalid username or password!');
+                document.getElementById('message').textContent = 'Invalid username or password.';
             }
         });</script>
 </body>
