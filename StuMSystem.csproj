@@ -715,6 +715,7 @@
     <Content Include="Views\Home\Research.cshtml" />
     <Content Include="Views\About\InformationOverview.cshtml" />
     <Content Include="Views\students\Update.cshtml" />
+    <Content Include="Views\students\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
