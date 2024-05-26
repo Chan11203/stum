@@ -1,0 +1,52 @@
+﻿@model IEnumerable<StuMSystem.Models.course>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.courseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lecturerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.day)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.location)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) 
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.courseName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lecturerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.day)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.location)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.courseId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.courseId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.courseId })
+        </td>
+    </tr>
+}
+
+</table>

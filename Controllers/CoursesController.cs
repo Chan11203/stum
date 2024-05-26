@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace StuMSystem.Controllers
 {
-    public class StudentsController : Controller
+    public class CoursesController : Controller
     {
-        // GET: Students
-        public ActionResult HomePage()
+        // GET: Courses
+        public ActionResult Index()
         {
             return View();
         }
