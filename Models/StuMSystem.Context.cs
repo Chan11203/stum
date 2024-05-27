@@ -27,6 +27,7 @@ namespace StuMSystem.Models
     
         public virtual DbSet<admin> admins { get; set; }
         public virtual DbSet<course> courses { get; set; }
+        public virtual DbSet<enrollment> enrollments { get; set; }
         public virtual DbSet<student> students { get; set; }
         public virtual DbSet<user> users { get; set; }
     }

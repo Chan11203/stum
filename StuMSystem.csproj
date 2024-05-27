@@ -564,7 +564,7 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AcademicController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\CoursesController.cs" />
+    <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MediaController.cs" />
@@ -573,31 +573,34 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\admin.cs">
-      <DependentUpon>StuMmodel.tt</DependentUpon>
+      <DependentUpon>StuMSystem.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\course.cs">
-      <DependentUpon>StuMmodel.tt</DependentUpon>
+      <DependentUpon>StuMSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\enrollment.cs">
+      <DependentUpon>StuMSystem.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\student.cs">
-      <DependentUpon>StuMmodel.tt</DependentUpon>
+      <DependentUpon>StuMSystem.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\StuMmodel.Context.cs">
+    <Compile Include="Models\StuMSystem.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>StuMmodel.Context.tt</DependentUpon>
+      <DependentUpon>StuMSystem.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\StuMmodel.cs">
+    <Compile Include="Models\StuMSystem.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>StuMmodel.tt</DependentUpon>
+      <DependentUpon>StuMSystem.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\StuMmodel.Designer.cs">
+    <Compile Include="Models\StuMSystem.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>StuMmodel.edmx</DependentUpon>
+      <DependentUpon>StuMSystem.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\user.cs">
-      <DependentUpon>StuMmodel.tt</DependentUpon>
+      <DependentUpon>StuMSystem.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -652,15 +655,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\StuMmodel.Context.tt">
+    <Content Include="Models\StuMSystem.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>StuMmodel.edmx</DependentUpon>
-      <LastGenOutput>StuMmodel.Context.cs</LastGenOutput>
+      <DependentUpon>StuMSystem.edmx</DependentUpon>
+      <LastGenOutput>StuMSystem.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\StuMmodel.tt">
+    <Content Include="Models\StuMSystem.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>StuMmodel.edmx</DependentUpon>
-      <LastGenOutput>StuMmodel.cs</LastGenOutput>
+      <DependentUpon>StuMSystem.edmx</DependentUpon>
+      <LastGenOutput>StuMSystem.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -671,12 +674,12 @@
     <Content Include="Content\scss\StyleSheet1.scss" />
     <Content Include="Content\scss\LoginStyle.scss" />
     <Content Include="Content\scss\StyleSheet.scss" />
-    <EntityDeploy Include="Models\StuMmodel.edmx">
+    <EntityDeploy Include="Models\StuMSystem.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>StuMmodel.Designer.cs</LastGenOutput>
+      <LastGenOutput>StuMSystem.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\StuMmodel.edmx.diagram">
-      <DependentUpon>StuMmodel.edmx</DependentUpon>
+    <Content Include="Models\StuMSystem.edmx.diagram">
+      <DependentUpon>StuMSystem.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -716,8 +719,10 @@
     <Content Include="Views\About\InformationOverview.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\students\HomePage.cshtml" />
-    <Content Include="Views\Courses\Create.cshtml" />
-    <Content Include="Views\Courses\Index.cshtml" />
+    <Content Include="Views\Course\Create.cshtml" />
+    <Content Include="Views\Course\Index.cshtml" />
+    <Content Include="Views\Course\Delete.cshtml" />
+    <Content Include="Views\Course\RegistCourse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -12,18 +12,13 @@ namespace StuMSystem.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class student
+    public partial class enrollment
     {
-        public long studentId { get; set; }
-        public Nullable<int> userId { get; set; }
+        public string courseId { get; set; }
+        public string courseName { get; set; }
+        public string studentId { get; set; }
         public string studentName { get; set; }
-        public string gender { get; set; }
-        public string email { get; set; }
-        public string address { get; set; }
-        public string tel { get; set; }
-        public string major { get; set; }
-        public Nullable<System.DateTime> dateofbirth { get; set; }
-    
-        public virtual user user { get; set; }
+        public string semester { get; set; }
+        public System.DateTime enrollmentDate { get; set; }
     }
 }

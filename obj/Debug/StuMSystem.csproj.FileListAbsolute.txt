@@ -312,7 +312,6 @@ C:\Users\Hi\source\repos\StuMSystem\bin\Microsoft.VisualStudio.RemoteControl.dll
 C:\Users\Hi\source\repos\StuMSystem\bin\System.IO.Pipelines.dll
 C:\Users\Hi\source\repos\StuMSystem\bin\Microsoft.VisualStudio.GraphModel.xml
 C:\Users\Hi\source\repos\StuMSystem\obj\Debug\StuMSystem.dll.config
-C:\Users\Hi\source\repos\StuMSystem\obj\Debug\StuMSystem.csproj.AssemblyReference.cache
 D:\Tech\StuMSystem\bin\Microsoft.DiaSymReader.Native.x86.dll
 D:\Tech\StuMSystem\bin\Microsoft.DiaSymReader.Native.amd64.dll
 D:\Tech\StuMSystem\bin\StuMSystem.dll.config
@@ -941,3 +940,4 @@ C:\Users\Hi\Desktop\StuMSystem\StuMSystem\obj\Debug\StuMSystem.csproj.CoreCompil
 C:\Users\Hi\Desktop\StuMSystem\StuMSystem\obj\Debug\StuMSystem.csproj.CopyComplete
 C:\Users\Hi\Desktop\StuMSystem\StuMSystem\obj\Debug\StuMSystem.dll
 C:\Users\Hi\Desktop\StuMSystem\StuMSystem\obj\Debug\StuMSystem.pdb
+C:\Users\Hi\source\repos\StuMSystem\obj\Debug\StuMSystem.csproj.AssemblyReference.cache

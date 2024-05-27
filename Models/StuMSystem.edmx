@@ -29,16 +29,18 @@
           <Property Name="time" Type="nvarchar" MaxLength="30" />
           <Property Name="location" Type="nvarchar" MaxLength="64" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'StuM.dbo.enrollment' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="enrollment">
-          <Property Name="courseId" Type="varchar" MaxLength="30" />
-          <Property Name="courseName" Type="nvarchar" MaxLength="128" />
-          <Property Name="studentId" Type="varchar" MaxLength="30" />
-          <Property Name="studentName" Type="nvarchar" MaxLength="128" />
-          <Property Name="semester" Type="varchar" MaxLength="20" />
-          <Property Name="enrollmentDate" Type="date" />
-        </EntityType>-->
+          <Key>
+            <PropertyRef Name="courseId" />
+            <PropertyRef Name="studentId" />
+          </Key>
+          <Property Name="courseId" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="courseName" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="studentId" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="studentName" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="semester" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="enrollmentDate" Type="date" Nullable="false" />
+        </EntityType>
         <EntityType Name="student">
           <Key>
             <PropertyRef Name="studentId" />
@@ -79,6 +81,7 @@ warning 6013: The table/view 'StuM.dbo.enrollment' does not have a primary key d
         <EntityContainer Name="StuMModelStoreContainer">
           <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="course" EntityType="Self.course" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="enrollment" EntityType="Self.enrollment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="fk1" Association="Self.fk1">
@@ -114,6 +117,18 @@ warning 6013: The table/view 'StuM.dbo.enrollment' does not have a primary key d
           <Property Name="day" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="time" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="location" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="enrollment">
+          <Key>
+            <PropertyRef Name="courseId" />
+            <PropertyRef Name="studentId" />
+          </Key>
+          <Property Name="courseId" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="courseName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="studentId" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="studentName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="semester" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="enrollmentDate" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="student">
           <Key>
@@ -157,6 +172,7 @@ warning 6013: The table/view 'StuM.dbo.enrollment' does not have a primary key d
         <EntityContainer Name="StuMEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="admins" EntityType="Self.admin" />
           <EntitySet Name="courses" EntityType="Self.course" />
+          <EntitySet Name="enrollments" EntityType="Self.enrollment" />
           <EntitySet Name="students" EntityType="Self.student" />
           <EntitySet Name="users" EntityType="Self.user" />
           <AssociationSet Name="fk1" Association="Self.fk1">
@@ -193,6 +209,18 @@ warning 6013: The table/view 'StuM.dbo.enrollment' does not have a primary key d
                 <ScalarProperty Name="day" ColumnName="day" />
                 <ScalarProperty Name="time" ColumnName="time" />
                 <ScalarProperty Name="location" ColumnName="location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="enrollments">
+            <EntityTypeMapping TypeName="StuMModel.enrollment">
+              <MappingFragment StoreEntitySet="enrollment">
+                <ScalarProperty Name="courseId" ColumnName="courseId" />
+                <ScalarProperty Name="courseName" ColumnName="courseName" />
+                <ScalarProperty Name="studentId" ColumnName="studentId" />
+                <ScalarProperty Name="studentName" ColumnName="studentName" />
+                <ScalarProperty Name="semester" ColumnName="semester" />
+                <ScalarProperty Name="enrollmentDate" ColumnName="enrollmentDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

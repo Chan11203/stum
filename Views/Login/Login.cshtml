@@ -46,7 +46,7 @@
                 if (authenticatedUser.role === 1) {
                     window.location.href = "/Admin/_HomePage";
                 } else if (authenticatedUser.role === 2) {
-                    window.location.href = "/Student/Homepage";
+                    window.location.href = "/students/Homepage";
                 }
             } else {
                 document.getElementById('message').textContent = 'Invalid username or password.';

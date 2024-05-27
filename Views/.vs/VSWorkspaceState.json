@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Controllers",
-    "\\Views"
+    "\\Course"
   ],
-  "SelectedNode": "\\obj",
+  "SelectedNode": "\\Course",
   "PreviewInSolutionExplorer": false
 }
