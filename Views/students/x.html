@@ -1,0 +1,163 @@
+@model StuMSystem.Models.student
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/scss/StyleSheet1.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="Script.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+</head>
+<div id="myHeader" class="header">
+    <div class="head">
+        <div class="container d-flex" style="padding-bottom: 8px; padding-top: 8px;justify-content:center;">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <a class="navbar-brand" data-toggle="hidden" title="Student Management System" href="/">
+                    <img src="~/Content/img/LOGO.png" style="width:500px; height:80px;margin-right:16px;" />
+                </a>
+                <button type="button" class="btn btn-link" style=" background-color: midnightblue; border-color: midnightblue; border-radius: 50px">
+                    <a class="logout" href="/Home/Index" style="margin-right:8px;color:#fff;">Log out</a>
+                </button>
+                <div class="iconAd" style="display: flex; margin-left: 10px; margin-top: 10px; margin-bottom: 7px">
+                    <i class='fa fa-user-circle' style='font-size:36px'></i>
+                    <p style="font-weight: bold; padding-top: 7px; padding-left: 5px; font-size: 18px; ">Admin</p>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="navbar menu" style="padding: 0px 0px 0px 0px;">
+        <div class="container">
+            <nav class="navbar-expand-lg navbar-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbardropdown" aria-controls="navbardropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse navigation collapse" id="navbardropdown">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active" actionname="Home" onclick="displayHome()">
+                            <a class="nav-link" href="#" style="font-weight: bold; font-size: 18px; border-bottom: 4px solid rgb(0, 105, 167); color: rgb(51, 51, 51);">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item dropdown" actionname="Student">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownStudent" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-weight:bold;font-size:18px;padding-top:8px;padding-bottom:10px;margin-left:15px;margin-right:15px;">
+                                Student
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbardropdown" style="width:200px">
+                                <a class="dropdown-item" href="/students/Create">Create new student</a>
+                                <a class="dropdown-item" href="/students/Search">Search student</a>
+                                <a class="dropdown-item" href="/">Update student details</a>
+                                <a class="dropdown-item" href="/students/Delete">Delete student</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown" actionname="Course">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownAcademics" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-weight:bold;font-size:18px;padding-top:8px;padding-bottom:10px;margin-left:15px;margin-right:15px;">
+                                Course
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbardropdown" style="width:210px">
+                                <a class="dropdown-item" href="/courses/Create">Create course</a>
+                                <a class="dropdown-item" href="/courses/">Search course</a>
+                                <a class="dropdown-item" href="/">Update course details</a>
+                                <a class="dropdown-item" href="/courses/Delete">Delete course</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="searchStu" style="margin-top:20px;">
+    <div class="container" style="width:700px; display:flex;">
+        <div class="input-group mb-3">
+            <input type="text" id="search-term" class="form-control" placeholder="Search students...">
+            <button class="btn btn-default" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+        <button id="search-button" type="button" class="btn btn-link" style=" background-color: midnightblue; border-color: midnightblue; border-radius: 50px; margin-left: 30px; height: 40px;">
+            <a class="getAll" href="/students/Index" style="margin-right: 8px; color: #fff; font-weight:bold">All Students</a>
+        </button>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script>
+
+</script>
+<div class="showInf">
+    <div class="container">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.studentName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.studentName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.gender)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.gender)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.address)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.address)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.tel)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.tel)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.major)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.major)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.dateofbirth)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.dateofbirth)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.user.userName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.user.userName)
+            </dd>
+
+        </dl>
+    </div>
+    
+
+</div>

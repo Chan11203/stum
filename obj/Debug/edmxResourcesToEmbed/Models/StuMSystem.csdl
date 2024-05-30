@@ -85,5 +85,21 @@
       <End Role="users" EntitySet="users" />
       <End Role="student" EntitySet="students" />
     </AssociationSet>
+    <FunctionImport Name="Account" ReturnType="Collection(StuMModel.Account_Result)" />
   </EntityContainer>
+  <ComplexType Name="Account_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="userName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="password" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="role" Nullable="true" />
+    <Property Type="Int64" Name="studentId" Nullable="false" />
+    <Property Type="Int32" Name="userId" Nullable="true" />
+    <Property Type="String" Name="studentName" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="gender" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="email" Nullable="true" MaxLength="64" />
+    <Property Type="String" Name="address" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="tel" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="major" Nullable="true" MaxLength="64" />
+    <Property Type="DateTime" Name="dateofbirth" Nullable="true" />
+  </ComplexType>
 </Schema>

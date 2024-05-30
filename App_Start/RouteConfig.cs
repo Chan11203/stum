@@ -22,14 +22,14 @@ namespace StuMSystem
             routes.MapRoute(
                name: "SearchStudent",
                url: "students/Search",
-               defaults: new { controller = "Students", action = "Search" }
+               defaults: new { controller = "students", action = "Search" }
            );
 
-            // Thêm route cho StudentsController
+            // Thêm route cho studentsController
             routes.MapRoute(
                 name: "CreateStudent",
                 url: "students/Create",
-                defaults: new { controller = "Students", action = "Create" }
+                defaults: new { controller = "students", action = "Create" }
             );
 
         }

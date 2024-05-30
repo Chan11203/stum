@@ -568,9 +568,14 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MediaController.cs" />
-    <Compile Include="Controllers\StudentsController.cs" />
+    <Compile Include="Controllers\RegistController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\studentsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Account_Result.cs">
+      <DependentUpon>StuMSystem.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\admin.cs">
       <DependentUpon>StuMSystem.tt</DependentUpon>
@@ -667,6 +672,7 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -718,11 +724,14 @@
     <Content Include="Views\Home\Research.cshtml" />
     <Content Include="Views\About\InformationOverview.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
-    <Content Include="Views\students\HomePage.cshtml" />
+    <Content Include="Views\Regist\HomePage.cshtml" />
     <Content Include="Views\Course\Create.cshtml" />
     <Content Include="Views\Course\Index.cshtml" />
     <Content Include="Views\Course\Delete.cshtml" />
-    <Content Include="Views\Course\RegistCourse.cshtml" />
+    <Content Include="Views\Regist\RegistCourse.cshtml" />
+    <Content Include="Views\Course\Update.cshtml" />
+    <Content Include="Views\students\Update.cshtml" />
+    <Content Include="Views\students\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -12,6 +12,8 @@ namespace StuMSystem.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class StuMEntities : DbContext
     {
@@ -30,5 +32,10 @@ namespace StuMSystem.Models
         public virtual DbSet<enrollment> enrollments { get; set; }
         public virtual DbSet<student> students { get; set; }
         public virtual DbSet<user> users { get; set; }
+    
+        public virtual ObjectResult<Account_Result> Account()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Account_Result>("Account");
+        }
     }
 }

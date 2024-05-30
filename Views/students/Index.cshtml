@@ -50,8 +50,6 @@
                             <div class="dropdown-menu" aria-labelledby="navbardropdown" style="width:200px">
                                 <a class="dropdown-item" href="/students/Create">Create new student</a>
                                 <a class="dropdown-item" href="/students/Search">Search student</a>
-                                <a class="dropdown-item" href="/">Update student details</a>
-                                <a class="dropdown-item" href="/students/Delete">Delete student</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown" actionname="Course">
@@ -59,10 +57,8 @@
                                 Course
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbardropdown" style="width:210px">
-                                <a class="dropdown-item" href="/Courses/Create">Create course</a>
-                                <a class="dropdown-item" href="/Courses/">Search course</a>
-                                <a class="dropdown-item" href="/">Update course details</a>
-                                <a class="dropdown-item" href="/Courses/Delete">Delete course</a>
+                                <a class="dropdown-item" href="/Course/Create">Create course</a>
+                                <a class="dropdown-item" href="/Course/">Search course</a>
                             </div>
                         </li>
                     </ul>
@@ -113,7 +109,7 @@
                     </td>
 
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.studentId }) |
+                        @Html.ActionLink("Update", "Update", new { id = item.studentId }) |
                         @Html.ActionLink("Delete", "Delete", new { id = item.studentId })
                     </td>
                 </tr>

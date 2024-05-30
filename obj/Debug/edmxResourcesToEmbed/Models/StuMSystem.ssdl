@@ -73,6 +73,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="Account" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="StuMModelStoreContainer">
     <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="course" EntityType="Self.course" Schema="dbo" store:Type="Tables" />

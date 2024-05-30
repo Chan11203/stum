@@ -22,8 +22,13 @@ namespace StuMSystem.Models
         public string address { get; set; }
         public string tel { get; set; }
         public string major { get; set; }
-        public Nullable<System.DateTime> dateofbirth { get; set; }
-    
+        public DateTime dateofbirth { get; set; }
+        public string FormattedDateOfBirth
+        {
+            get { return dateofbirth.ToString("d/MM/yyyy"); }
+        }
+
+
         public virtual user user { get; set; }
     }
 }

@@ -19,7 +19,13 @@ namespace StuMSystem.Models
         {
             this.students = new HashSet<student>();
         }
-    
+
+        public user(string v1, int v2)
+        {
+            password = v1;
+            role = v2;
+        }
+
         public int id { get; set; }
         public string userName { get; set; }
         public string password { get; set; }
@@ -27,5 +33,7 @@ namespace StuMSystem.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<student> students { get; set; }
+
     }
+
 }

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="StuMSystem.Controllers.studentsController">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <Members>
+      <Method Name="Delete" Hidden="true" />
+      <Method Name="DeleteConfirmed" Hidden="true" />
+      <Method Name="DeleteStudent" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="GetStudentById" Hidden="true" />
+      <Method Name="Index" Hidden="true" />
+      <Method Name="Search" Hidden="true" />
+      <Method Name="Update" Hidden="true" />
+      <Method Name="UpdateStudent" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAUAACAAAAAAAAAAAEAAEAIAQEAAAAgAAA=</HashCode>
+      <FileName>Controllers\studentsController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="StuMSystem.Models.StuMEntities">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAMAEAAAAAEAAAAAACAAA=</HashCode>
+      <FileName>Models\StuMSystem.Context.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="students" />
+      <Property Name="users" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="StuMSystem.Models.student" Collapsed="true">
+    <Position X="3.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAgCIAAkABAAAIAAAAAAAAAAAAAIQQ=</HashCode>
+      <FileName>Models\student.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StuMSystem.Models.user">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAgECAgA=</HashCode>
+      <FileName>Models\user.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
